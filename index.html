@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Una carta para ti ♡</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main class="scene">
+    <!-- PANTALLA INICIAL: no muestra el mensaje hasta abrir la carta -->
+    <section id="closedView" class="closed-view" aria-label="Carta cerrada">
+      <button id="openLetter" class="envelope-button" type="button" aria-label="Ábreme: abrir carta">
+        <span class="envelope" aria-hidden="true">
+          <span class="envelope-back"></span>
+          <span class="envelope-flap"></span>
+          <span class="envelope-front"></span>
+          <span class="pixel-star">★</span>
+        </span>
+        <span class="open-label">Ábreme ♡</span>
+      </button>
+    </section>
+
+    <section id="letterView" class="letter-view" aria-label="Carta de cumpleaños" hidden>
+      <article class="letter-paper">
+        <div class="letter-decor" aria-hidden="true">(˶ˆᗜˆ˵)</div>
+
+        <p class="eyebrow">Hoy es un dia especial...</p>
+        <h1>¡FELIZ CUMPLEAÑOS!</h1>
+        <figure class="image-frame dog-frame">
+          <img src="images/dog.png"/>
+        </figure>
+        <p>Feliz cumpleaños vv espero que pases un bonito día junto a tu familia.</p>
+        <p>Aunque ando atascada de parciales, me di un tiempito para hace esto rapidito.</p>
+        <p>Gracias por ser una personita tan especial y estar siempre para mi c':</p>
+        <p>PD: Hay que salir pronto antes que acabe el año porfa.</p>
+        <figure class="image-frame memory-frame">
+          <img src="images/chikawa.jpg"/>
+        </figure>
+        <p class="signature">Con mucho cariño,<br /><strong>Cosmiccat :3</strong></p>
+        <button id="closeLetter" class="retro-button" type="button">↩ Cerrar carta</button>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

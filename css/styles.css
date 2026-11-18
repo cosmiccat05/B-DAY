@@ -1,0 +1,196 @@
+/* ===== PALETA: cambia estos colores para personalizar ===== */
+:root{
+    --bg:#f8eaf1;
+    --pink:#e88fae;
+    --pink-dark:#a95177;
+    --paper:#fff9ee;
+    --ink:#5e4055;
+    --outline:#65445a;
+    --shadow:#d5b2c4
+}
+*{
+    box-sizing:border-box
+}
+html{
+    min-height:100%
+}
+body{
+    margin:0;
+    min-height:100vh;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Courier New',monospace;
+    background-image:linear-gradient(#ffffff40 1px,transparent 1px),linear-gradient(90deg,#ffffff40 1px,transparent 1px);
+    background-size:24px 24px
+}
+.scene{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    padding:28px
+}
+.closed-view{
+    width:100%;
+    display:grid;
+    place-items:center
+}
+.envelope-button{
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:36px;
+    font:inherit;
+    color:var(--pink-dark);
+    transition:transform .2s
+}
+.envelope-button:hover{
+    transform:translateY(-7px)
+}
+.envelope-button:focus-visible,.retro-button:focus-visible{
+    outline:4px dashed var(--pink-dark);
+    outline-offset:10px
+}
+.envelope{
+    width:260px;
+    height:170px;
+    display:block;
+    position:relative;
+    filter:drop-shadow(9px 10px 0 var(--shadow));
+    image-rendering:pixelated
+}
+.envelope-back{
+    position:absolute;
+    inset:0;
+    background:#f5bfd0;
+    border:5px solid var(--outline)
+}
+.envelope-flap{
+    position:absolute;
+    top:5px;
+    left:5px;
+    width:calc(100% - 10px);
+    height:100px;
+    background:#ffdce7;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    z-index:2
+}
+.envelope-front{
+    position:absolute;
+    inset:5px;
+    background:#f1a4bd;
+    clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);
+    z-index:3
+}
+.pixel-star{
+    position:absolute;
+    z-index:4;
+    top:85px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--paper);
+    border:4px solid var(--outline);
+    padding:3px 11px;
+    color:#db608e;
+    font-size:27px;
+    box-shadow:4px 4px 0 #ae7591
+}
+.open-label{
+    font-size:clamp(22px,5vw,32px);
+    font-weight:bold;
+    letter-spacing:2px;
+    text-shadow:3px 3px 0 #fff;
+    animation:bob 1.8s ease-in-out infinite
+}
+@keyframes bob{
+    50%{transform:translateY(-5px)}
+}[hidden]{
+    display:none!important
+}
+.letter-view{
+    width:min(100%,750px);
+    animation:appear .65s both
+}
+@keyframes appear{
+    from{opacity:0;transform:translateY(22px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}
+}
+.letter-paper{
+    background:var(--paper);
+    border:5px solid var(--outline);
+    box-shadow:10px 10px 0 var(--shadow);
+    padding:clamp(22px,5vw,48px);
+    text-align:center;line-height:1.8
+}
+.letter-decor{
+    color:var(--pink-dark);
+    font-size:25px;
+    letter-spacing:10px
+}
+.eyebrow{
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--pink-dark);
+    font-weight:bold
+}
+.letter-paper h1{
+    font-size:clamp(26px,5vw,40px);
+    line-height:1.25;
+    color:var(--pink-dark);
+    margin:12px 0 26px
+}
+.letter-paper p{
+    font-size:15px
+}
+.letter-paper h2{
+    font-size:20px;
+    color:var(--pink-dark);
+    margin-top:35px
+}
+.image-frame{
+    margin:22px auto 28px;
+    padding:9px;
+    background:#fff;
+    border:3px solid var(--outline);
+    box-shadow:5px 5px 0 var(--shadow);
+    max-width:100%
+}
+.image-frame img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#ffffff;
+    image-rendering:auto
+}
+.dog-frame{
+    width:min(100%,260px);
+    aspect-ratio:1/1
+}
+.memory-frame{
+    width:min(100%,570px);
+    aspect-ratio:16/9
+}
+.signature{
+    margin:28px 0!important
+}
+.retro-button{
+    cursor:pointer;
+    border:3px solid var(--outline);
+    background:#f3b7cc;
+    color:var(--ink);
+    font:700 14px 'Courier New',monospace;
+    padding:12px 20px;
+    box-shadow:4px 4px 0 var(--outline)
+}
+.retro-button:hover{
+    background:#ffd3e1
+}
+.retro-button:active{
+    box-shadow:none;
+    transform:translate(4px,4px)
+}
+@media(max-width:520px){
+    .letter-paper p{font-size:14px}.dog-frame{width:min(100%,220px)}
+}
